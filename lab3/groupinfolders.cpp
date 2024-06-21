@@ -6,11 +6,7 @@ QHash<QString, double> GroupInFolders::Calculate(QDir d)
     double size = 0;
     for(QFileInfo inf : d.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot)){
         if(inf.isDir()){
-            QHash<QString, double> H;
-            H = Calculate(inf.absoluteFilePath());
-            double size_t = 0;
-            for(auto t : H.values())
-                size_t += t;
+            double size_t = AttahedSize(inf.absoluteFilePath());
             Hash.insert(inf.baseName(), size_t);
         }
         else if(inf.isFile()){
@@ -19,4 +15,19 @@ QHash<QString, double> GroupInFolders::Calculate(QDir d)
     }
     Hash.insert("Current Directory", size);
     return Hash;
+}
+
+double GroupInFolders::AttahedSize(QDir d)
+{
+    double size = 0;
+    for(QFileInfo inf : d.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot)){
+        if(inf.isDir()){
+            double size_t = AttahedSize(inf.absoluteFilePath());
+            size += size_t;
+        }
+        else if(inf.isFile()){
+            size += inf.size()/1024;
+        }
+    }
+    return size;
 }

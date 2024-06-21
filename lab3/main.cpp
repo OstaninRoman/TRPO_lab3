@@ -2,7 +2,6 @@
 #include "counter.h"
 #include "groupbytype.h"
 #include "groupinfolders.h"
-#include <QTextStream>
 
 int main(int argc, char *argv[])
 {
