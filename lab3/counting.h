@@ -8,7 +8,7 @@
 class Counting
 {
 public:
-    virtual QHash<QString, int> Calculate(QDir) =0;
+    virtual QHash<QString, double> Calculate(QDir) =0;
 };
 
 #endif // COUNTING_H

@@ -6,7 +6,7 @@ class GroupInFolders : public Counting
 {
 public:
     GroupInFolders(){};
-    QHash<QString, int> Calculate(QDir) override;
+    QHash<QString, double> Calculate(QDir) override;
 };
 
 #endif // GROUPINFOLDERS_H

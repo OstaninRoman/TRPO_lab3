@@ -6,9 +6,9 @@ class Counter
 {
 public:
     Counter(Counting* strategy):m_strategy(strategy){};
-    QHash<QString, int> Calc(QDir );
+    QHash<QString, double> Calc(QDir );
     void setStrategy(Counting* strategy){
-        this->m_strategy = strategy;
+        m_strategy = strategy;
     };
 private:
     Counting* m_strategy;

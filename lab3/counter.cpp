@@ -1,6 +1,9 @@
 #include "counter.h"
 
-QHash<QString, int> Counter::Calc(QDir d)
+QHash<QString, double> Counter::Calc(QDir d)
 {
-     return m_strategy->Calculate(d);
+    if(m_strategy)
+        return m_strategy->Calculate(d);
+    qWarning("strategy == nullptr");
+    return QHash<QString, double>{} ;
 }
