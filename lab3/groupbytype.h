@@ -6,6 +6,7 @@ class GroupByType : public Counting
 {
 public:
     GroupByType(){};
+private:
     QHash<QString, double> Calculate(QDir) override;
 };
 

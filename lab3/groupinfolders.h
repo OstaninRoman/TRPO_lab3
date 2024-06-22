@@ -6,6 +6,7 @@ class GroupInFolders : public Counting
 {
 public:
     GroupInFolders(){};
+private:
     QHash<QString, double> Calculate(QDir) override;
     double AttahedSize(QDir);
 };
