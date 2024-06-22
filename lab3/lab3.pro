@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 SOURCES += \
         counter.cpp \
         counting.cpp \
+        filebrowserdatamodel.cpp \
         groupbytype.cpp \
         groupinfolders.cpp \
         main.cpp
@@ -22,5 +23,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     counter.h \
     counting.h \
+    filebrowserdatamodel.h \
     groupbytype.h \
-    groupinfolders.h
+    groupinfolders.h \
+    somedata.h
+
+FORMS +=
