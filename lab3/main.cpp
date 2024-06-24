@@ -6,7 +6,7 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    QDir dir("..\\Test\\test2\\");
+    QDir dir("..\\Test\\test3\\");
     Counting* strategyByType = new(std::nothrow) GroupByType();
     Counter c = Counter(strategyByType);
     QHash<QString, double>H1 = c.Calc(dir);
