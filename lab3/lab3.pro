@@ -1,4 +1,6 @@
-QT -= gui
+QT += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17 console
 CONFIG -= app_bundle
@@ -13,7 +15,8 @@ SOURCES += \
         filebrowserdatamodel.cpp \
         groupbytype.cpp \
         groupinfolders.cpp \
-        main.cpp
+        main.cpp \
+        window.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -26,6 +29,7 @@ HEADERS += \
     filebrowserdatamodel.h \
     groupbytype.h \
     groupinfolders.h \
-    somedata.h
+    somedata.h \
+    window.h
 
 FORMS +=
